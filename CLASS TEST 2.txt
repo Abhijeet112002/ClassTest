@@ -1,0 +1,380 @@
+       		1. variable and data types
+
+
+1) ->
+
+   variables in java can be defined as its a container to store a value .
+
+	for ex. syntax for variable is 
+	datatype variableName = value;
+        int age = 50; // declaration and initialization of an array.
+	age = 20; // reassigning a value.
+
+2) ->
+
+	There are mainly 2 types of dataTypes i.e
+
+	1) primitive datatype
+	2) non primitive datatype
+
+	primitive datatype is built in datatype 
+	non primitive datatype is userdefined as well as built in datatypes
+
+	in primitive datatypes there will be 8 types 
+
+	byte => byte age = 20;
+	short => short noOfcountry = 195;
+	int  => int price = 5000;
+	long => long mobileNumber = 9632662892l;
+	float => float height = 168.5f;
+	double => double bankBalace = 234.3728d;
+	character => char grade = 'a';
+	Boolean => Boolean javaIsEasy = true;
+
+
+	non primitive data types like array String etc
+
+3) -> 
+	 the difference between primitive and non-primitive data types is follow
+	primitive - 1) its a buit in datatype
+		    2) no user defined datatypes are available
+
+		ex : int , float , double ,Boolean , char etc.
+
+	non-primitive -1) its a buit in as well as usedefined datatype
+		       2) user can easly define the datatype
+
+		ex : array , String
+
+4) -> 
+ 	int x = 10;
+	double y = x;
+	System.out.println(y); 
+  	
+	 output = 10.0;
+
+5) -> 
+
+	the default value of an uninitialized integer = 0;
+	the default value of an uninitialized boolean = false;
+
+
+-------------------------------------------------------------------------------------
+
+		2. methods and return type
+
+1) ->
+
+	methods in java can be defined as  its a block of code which is executed whenever 	it is called .
+	mainly the method can be used for reusability 
+
+2) ->
+
+	public class Method{
+	public static void main (String[] args){
+	
+	int result=add(2,4);
+	System.out.println(" sum of two integer is :" result)
+	
+	
+	}
+
+
+	static void add( int a , int b){
+	int addedValue = a + b;
+	return addedValue;
+	}
+
+	}
+	
+3) ->  
+
+	void method 
+
+	if we written an void method we need not to return any value, method will execute 	by invoking an method to the main method 
+
+	public class Method{
+	public static void main (String[] args){
+	
+	add();	
+	
+	}
+
+	static void add(){
+	System.out.println(add);
+	
+	}
+
+	}
+
+
+	non void method
+	if we written an non void method we need to return  value that we have been passed 	by using a return keyword , method will execute by invoking an method to the main 	method
+
+	public class Method{
+	public static void main (String[] args){
+	
+	int result=add(2,4);
+	System.out.println(" sum of two integer is :" result)
+	
+	}
+
+	static void add( int a , int b){
+	int addedValue = a + b;
+	return addedValue;
+	}
+
+	}
+
+4) ->
+
+	public class Test {
+    public static void main(String[] args) {
+        System.out.println(getValue());
+    }
+
+    static int getValue() {
+        return 20;
+    }
+	}
+
+
+	===>  output = 20;
+
+5) ->
+
+	method overloading 
+
+	
+	in general method overloading can be having a same method names but difference in 	number/types of parameters 
+
+	public class Calculator{
+	public static void main(String[] args) {
+	
+	add(2,4);
+	add(2,7,9);
+	add(47,45,5,5,);
+
+	}
+
+	static void add(int a,int b){
+	int p = a + b;
+
+	static void add(int a,int b ,int c)
+	int r = a + b +c;
+
+	static void add(int a,int b ,int c ,int d)
+	int r = a + b + c + d;
+
+	}
+	}
+
+6) ->
+
+	What happens if a method with a return type does not return any value?
+
+
+   then method execution will stop and return compile time error  
+
+
+----------------------------------------------------------------------------------------
+
+	3. PARAMETERS AND PASS BY VALUE CONCEPT
+
+1) ->
+
+	parameters are the variables that are declare in a method
+
+	they used in methods bcz to pass the value in the method.
+
+2) -> 
+
+	pass by value
+
+
+3) -> 
+
+	public class Test {
+    public static void modify(int a, int[] arr) {
+        a = a + 5;
+        arr[0] = arr[0] + 5;
+        System.out.println("Inside modify method: a = " + a + ", arr[0] = " + arr[0]);
+    }
+
+    public static void main(String[] args) {
+        int num = 10;
+        int[] numbers = {20, 30, 40};
+
+        modify(num, numbers);
+        System.out.println("After modify method: num = " + num + ", numbers[0] = " + numbers[0]);
+    }
+}
+
+   output is 40.
+
+
+4) ->
+
+ 	 No, a method cant return a multiple value in java
+
+
+5) -> 
+
+      if we pass an array to a method,  it modify the original array
+
+
+------------------------------------------------------------------------------------------
+
+
+		4 ARRAY
+
+1) -> 
+
+
+	 Array in java can be defined as its a group or collection of same type of 	elements
+
+
+	in normal variable it will just store a single value of that datatype
+
+	ex. int age = 46;
+
+        but in array we can store multiple values like
+	
+	int[] age = { 45, 36, 37,39 ,29};
+
+2) ->
+
+	Declaration of an array 
+
+	datatype[] variableName = {values};
+
+	array can be denoted by []
+
+	int[] age = { 45, 36, 37,39 ,29};
+
+
+3) ->
+
+	 Java program to find the maximum element in an integer array.
+
+
+4) ->
+
+	public class ArrayExample {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(arr[2]);
+    }
+   }
+
+
+
+	===> output is = 3 ;
+
+
+5) -> 
+
+
+	 Java program to reverse an array without using an additional array.
+
+6) -> 
+
+	public class Array{
+	public static void main(String [] args){
+	
+	int[] array = { 10,20,30,40,50}
+	int result = sumOfArray(array);
+	System.out.println("sum of array is : " + result);
+
+        }
+
+	static int sumOfArray(int[] array){
+	int total = 0;
+	for(int i = 0; i<array.lenght;i++){
+	total = total + array[i];
+	}
+	return total ;
+	
+	
+	}
+
+	}
+
+
+==================================================================================
+
+
+		the Output Questions
+
+
+
+1) ->
+
+		OUTPUT = 8;
+
+2) -> 
+
+		OUTPUT = 1,3,5;
+
+3) -> 
+
+
+		OUTPUT = 8 , 8
+		         3 4;
+
+
+4) -> 
+
+		OUTPUT = 4;
+
+
+
+	
+
+
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+	
+
+
+	
+
+
+	
+	
+
+	
+
+
+
+	
+
+
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+ 
+	
