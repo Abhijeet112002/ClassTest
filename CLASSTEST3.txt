@@ -1,0 +1,342 @@
+1) -> A class in a java can be defined as " its  used as any blueprint" is called class.
+	an object is real world intity which have the states and behaviours. states we can 	refer as a variable and behaviour we can refer as a methods. a class is blueprint  	where object has a instance  value.
+
+2)-> a constructor is special type of method , its a block of code which is executed 	whenever 	an object has been created , contructors are used to intialize 	object attribute 	value. 
+	a method is block of code which is executed whenever we call in main method.
+
+3) -> There are mainly 3 types of constructor they are follows;
+	1> default constructor:  the default constructor is type of constructor , whenever 	class is created the compiler will aitomatically create an object and executes the 	constructor.
+
+	ex . public class player {
+	int x = 2;
+	
+	
+	public static void main(string[] args){
+	player p = new player(); // here the constructor automatically called 
+	system.out.println(p);
+	}
+	}
+
+
+	2> no paramater constructor:  this a type of constructor where we need to create an 	constructor and should not have any  parameter
+	ex . public class player {
+	int x = 2;
+
+	
+	public player(){
+	system.out.println("constructor");
+
+	public static void main(){
+	
+	new player();
+	
+	}
+	}
+
+
+	3> with parameter constructor: this is a type of constructor where we need to pass 	the parameter into the constructor which is used to initialize object attributes.
+
+	ex . public class player {
+	int x ;
+
+	
+	public player(int x){
+	system.out.println("constructor");
+
+	public static void main(){
+	
+	player p = new player(3);
+	
+	}
+	}
+
+
+
+
+4) yes, a constructor be private .is used  to stop the creating a object.
+
+
+5) Aggregation  is a type association that represents a has-a relationship between two   	class were both the classes are independent.
+
+
+	hostel has a room.
+	hostel has a library.
+	hostel has a dining hall.
+
+
+6) inheritance allows one class to inherit the properties and behaviour from other class / 	a chaild class aquires all the properties from the parent class. 
+
+	inheritance is used for code reusability.
+
+
+7) there are mainly 5 inheritance type supported by java
+
+	ie  1> single inheritance = where the child class aquire all the propertis from 	parent class
+	2> multilevel inheritance = where a first child act as both child as well as parent 
+	3> multiple inheritance =  a single child aquire all the propertis of two or more 	patrent class
+	4> heirarchial inheritance = for a single parent class there will be multiple child 	class it form a tree like structure 
+	5> hybrid inheritance = is combination of multiple and heirarchial inheritance 
+
+
+	here the single, multilevel , hierarchial are mainly supported by java
+
+
+8) the main use of super keyword is to inherit all the properties of parent class.
+
+
+9) java doesn't support multiple inheritance with classes bcz in java inheritance will 	happen due to EXTEND keyword which supports only single class to inherite.  if its 	support multiple class for inheritance then it is complex for java to executes a 	code thats the reason it wont supports a multilple class.
+
+10)   in java the static variables are the variables which belong to class rathes than to 	any specific instance.
+
+	 ww can access the static variables by using class name. 
+	 where the instatnce variables are accessed by using object names.
+
+11)  its is stored in instance memory or main method 
+
+	before main method execution this variables are stored
+
+12)   static block is block of code written in a class which mentioned by using a static 	keyword  this block of code will be executed once when the class is loaded to jvm 	it runs before an object is created. 
+
+13) yes a class have a multiple static blocks they executed once when the class is loaded 	to jvm by there order of created 
+
+14)  the main use of static block is to initialize the static varibles.
+
+15) the main method is static in java bcz from main method only execution of an program is started  this method is static bcz jvm will invoke this method without creating an instatnce of the class 
+
+
+
+1)  -> 
+class Test {
+    int num = 5;
+
+    void modify(Test obj) {
+        obj.num += 10;
+    }
+
+    public static void main(String[] args) {
+        Test t1 = new Test();
+        t1.modify(t1);
+        System.out.println("Value: " + t1.num);
+    }
+}
+
+    ====> value 15
+
+2) 
+class Example {
+    int a;
+
+    Example() {
+        this(100);
+        System.out.println("Default Constructor");
+    }
+
+    Example(int x) {
+        a = x;
+        System.out.println("Parameterized Constructor: " + a);
+    }
+
+    public static void main(String[] args) {
+        Example e = new Example();
+    }
+}
+
+=====> default constructor
+
+
+3) 
+class CPU {
+    int cores = 4;
+}
+
+class Computer {
+    CPU cpu = new CPU();
+
+    void showSpecs() {
+        System.out.println("Cores: " + cpu.cores);
+    }
+
+    public static void main(String[] args) {
+        Computer c1 = new Computer();
+        Computer c2 = new Computer();
+        c1.cpu.cores = 8;
+        c1.showSpecs();
+        c2.showSpecs();
+    }
+}
+
+======> cpu core 8
+        cpu core 4
+
+
+4)  
+class CPU {
+    int cores = 4;
+}
+
+class Computer {
+    CPU cpu = new CPU();
+
+    void showSpecs() {
+        System.out.println("Cores: " + cpu.cores);
+    }
+
+    public static void main(String[] args) {
+        Computer c1 = new Computer();
+        Computer c2 = new Computer();
+        c1.cpu.cores = 8;
+        c1.showSpecs();
+        c2.showSpecs();
+    }
+}
+
+=====> 10
+	20
+
+5) 
+class Parent {
+    static void show() {
+        System.out.println("Parent static");
+    }
+}
+
+class Child extends Parent {
+    static void show() {
+        System.out.println("Child static");
+    }
+
+    public static void main(String[] args) {
+        Parent p = new Child();
+        p.show();
+    }
+}
+
+==========> parent static 
+
+
+6) 
+class Counter {
+    static int count = 0;
+
+    Counter() {
+        count++;
+    }
+
+    public static void main(String[] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+        Counter c3 = new Counter();
+        System.out.println(Counter.count);
+    }
+}
+
+========> 3
+
+7) 
+class Init {
+    static int val;
+
+    static {
+        val = 50;
+        System.out.println("Static block executed");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Value: " + val);
+    }
+}
+
+=========>  static block executed       50
+
+
+8)  
+class Animal {
+    void move() {
+        System.out.println("Animal moves");
+    }
+}
+
+class Dog extends Animal {
+    void move() {
+        System.out.println("Dog runs");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.move();
+    }
+
+===========> dog runs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
